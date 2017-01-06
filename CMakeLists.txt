@@ -51,10 +51,12 @@ include(ArtMake)
 include(BuildPlugins)
 
 # ADD SOURCE CODE SUBDIRECTORIES HERE
-#add_subdirectory(larlitecvtagger)
-
-# tests
-#add_subdirectory(test)
+add_custom_command(
+	TARGET larlitecv
+	POST_BUILD
+	file(COPY larlitecv DESTINATION ${CMAKE_PREFIX}/${flavorqual_dir})
+	#TODO do the actual build here
+)
 
 # ups - table and config files
 add_subdirectory(ups)
