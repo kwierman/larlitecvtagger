@@ -1,0 +1,4 @@
+[submodule "larlitecv"]
+	path = larlitecv
+	url = https://github.com/LArbys/larlitecv
+	branch = tmw_muon_tagger
