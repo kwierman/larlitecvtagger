@@ -51,10 +51,10 @@ include(ArtMake)
 include(BuildPlugins)
 
 # ADD SOURCE CODE SUBDIRECTORIES HERE
-add_subdirectory(larlitecvtagger)
+#add_subdirectory(larlitecvtagger)
 
 # tests
-add_subdirectory(test)
+#add_subdirectory(test)
 
 # ups - table and config files
 add_subdirectory(ups)
