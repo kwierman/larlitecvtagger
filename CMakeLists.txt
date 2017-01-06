@@ -44,12 +44,14 @@ find_ups_product( larlite v1_00_00 )
 find_ups_product( larcv v1_00_00 )
 find_ups_product( cetbuildtools v5_06_01 )
 
-execute_process(COMMAND "git submodule update --init"
-		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+execute_process(COMMAND git submodule update --init
+		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+		OUTPUT_VARIABLE submodule_update)
+
 file(GLOB larlitecv_source "${CMAKE_CURRENT_SOURCE_DIR}/larlitecv/*")
 file(COPY ${larlitecv_source}  DESTINATION ${CMAKE_INSTALL_PREFIX}/${flavorqual_dir})
 
-execute_process(COMMAND "source configure.sh; make"
+execute_process(COMMAND source configure.sh &&  make
 		WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX}/${flavorqual_dir})
 
 add_subdirectory(test)
